@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="quiz">
+
+        <div id="question">{{text}} ?</div>
+        <ul id="answers">
+            <li v-for="answer in answers" :key="answer">
+                {{ answer }}
+            </li>
+        </ul>
+
+        <div id="navigation">
+            <button v-on:click="prevQuestion">prev</button>
+            <button v-on:click="nextQuestion">next</button>
+        </div>
+
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
