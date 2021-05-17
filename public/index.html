@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="quiz">
+
+        <div id="question">
+            <div>{{text}} ?</div>
+            <div id="answers">
+                <div v-for="(answer, index) in answers" :key="answer">
+                    <input type="radio" v-bind:value="index" v-model="picked" name="radioButton">
+                        {{ answer }}
+                    
+                                
+                </div>
+                <div>{{correctAns}}</div>
+            </div>
+
+            
+        </div>
+
+        <div id="navigation">
+            <button v-on:click="prevQuestion" v-bind:disabled='isPrevDisabled'>prev</button>
+            <button v-on:click="nextQuestion" v-bind:disabled='isNextDisabled'>next</button>
+            <button v-on:click="finish">finish</button>
+
+        </div>
+
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
